@@ -1,0 +1,92 @@
+@import '../../../styles/variables';
+.wrapper {
+    display: flex;
+    width: 100%;
+    margin: 0;
+    top: 0;
+    transition: all 0.2s ease-out;
+    align-items: center;
+    justify-content: flex-end;
+    margin-left: auto;
+    .filter {
+        display: flex;
+        &.hide {
+            display: none;
+        }
+        transition: all .2s ease-in-out;
+        .by {
+            border-right: 0;
+            border-radius: 0;
+            flex-grow: 0;
+            @media screen and (max-width: $break-small) {
+                flex-grow: 1;
+            }
+            &:first-child {
+                border-bottom-left-radius: 4px;
+                border-top-left-radius: 4px;
+            }
+            &:last-child {
+                border-bottom-right-radius: 4px;
+                border-top-right-radius: 4px;
+                border-right: 1px solid #bbb;
+            }
+
+        }
+        .active {
+          background-color: rgba(136, 136, 136, 0.1);
+      }
+    }
+    .removeDone {
+        margin-right: auto;
+        &.hide {
+            display: none;
+        }
+        transition: all .1s ease-out;
+        button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: auto;
+            img {
+                height: 10px;
+                width: 13px;
+                padding-left: 5px;
+            }
+            @media screen and (max-width: $break-small) {
+                width: 100%;
+            }
+        }
+    }
+    .search {
+        margin-right: auto;
+        display: flex;
+        width: 40px;
+        transition: all .1s ease-out;
+        &.extend {
+            width: 100%;
+        }
+        input {
+            @media screen and (max-width: $break-small) {
+                width: 100%;
+            }
+        }
+        input {
+            margin-bottom: 10px;
+            width: 100%;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            background-position: left 50%;
+            background-repeat: no-repeat;
+            background-image: url('../../../assets/images/search.svg');
+            padding: .5em;
+            text-indent: 25px;
+            border-radius: 0;
+            background-size: 15px 11px;
+            background-position: 12px 50%;
+            border-radius: 4px;
+        }
+    }
+    @media screen and (max-width: $break-small) {
+        display: block;
+    }
+}

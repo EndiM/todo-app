@@ -1,0 +1,16 @@
+@import 'variables';
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    font: 14px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    line-height: 1.4em;
+    color: #4d4d4d;
+    margin: 0 auto;
+    #app {
+        height: 100%;
+    }
+}
