@@ -173,7 +173,8 @@ class TodoPage extends React.Component {
     const {
       filteredTodoList,
       searchActive,
-      statusActive
+      statusActive,
+      todoList
     } = this.state;
     return (
       <div className={styles.wrapper}>
@@ -187,7 +188,7 @@ class TodoPage extends React.Component {
           searchActive={searchActive}
           handleSearch={this.handleSearch}
           statusActive={statusActive} />
-        <h6 className={styles.count}>Total tasks: {this.state.todoList.length}</h6>
+        <h6 className={styles.count}>Total tasks: {todoList.length} | Done: {todoList.filter(ti => ti.status === Status.Done).length}</h6>
         <hr className={styles.divider} />
         <TodoList todoList={filteredTodoList} handleRemove={this.handleRemove} toggleDone={this.toggleDone} />
       </div>
